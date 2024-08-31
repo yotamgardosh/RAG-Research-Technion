@@ -3,9 +3,6 @@
 
 Welcome to the LLM-Research-Technion repository! This repository serves as the central hub for our ongoing research and development of Large Language Models (LLMs) at Technion. Our work focuses on exploring, evaluating, and implementing advanced LLM architectures to solve complex problems in systems engineering and beyond.
 
-## Repository Overview
-In this repository, you will find:
-
 ## Model Implementations:
 Source code and scripts for various LLMs, including Transformer-based models, encoder-decoder hybrids, and instruction-tuned models.
 
