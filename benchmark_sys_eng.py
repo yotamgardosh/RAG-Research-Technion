@@ -1,7 +1,7 @@
-import os
-import json
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+# import os
+# import json
+# from transformers import AutoModelForCausalLM, AutoTokenizer
+# import torch
 
 class SystemMessage:
     def __init__(self, content):
@@ -36,7 +36,7 @@ class LLMChat:
         - tokenizer: The loaded tokenizer.
         """
         tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
-        model = AutoModelForCausalLM.from_pretrained(
+        model = AutoModel.from_pretrained(
             model_name,
             load_in_8bit=True,  # Enable 8-bit quantization for the model
             device_map='auto'  # Automatically use available devices (CPU/GPU)
