@@ -1,6 +1,5 @@
-import os
-import json
-
+# import os
+# import json
 
 class SystemMessage:
     def __init__(self, content):
@@ -63,8 +62,8 @@ def generate_mcq_responses(df, folder_directory, instructions, file_output_name=
     print(f"Results saved to {file_path}")
 
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+# from transformers import AutoModelForCausalLM, AutoTokenizer
+# import torch
 
 
 def load_model_and_tokenizer(model_name):
@@ -92,12 +91,14 @@ def load_model_and_tokenizer(model_name):
 # model, tokenizer = load_model_and_tokenizer(model_name)
 
 
-def chat_model(messages):
+def chat_model(messages, model, tokenizer):
     """
     A chat model method that takes a list of message objects and generates a response using a local language model.
 
     Args:
     - messages (list): A list of message objects (SystemMessage, HumanMessage) with a `content` attribute.
+    - model: The language model to use for generating responses.
+    - tokenizer: The tokenizer to use with the language model.
 
     Returns:
     - response: An object with a `content` attribute containing the generated response.
@@ -112,12 +113,12 @@ def chat_model(messages):
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_length=200,  # Adjust max length as needed
+            max_length=200,
             pad_token_id=tokenizer.eos_token_id,
             num_return_sequences=1,
-            do_sample=True,  # Enable sampling to generate more varied responses
-            top_p=0.95,  # Nucleus sampling to introduce diversity
-            temperature=0.7  # Control creativity; lower values make the output more focused
+            do_sample=True,
+            top_p=0.95,
+            temperature=0.7
         )
 
     # Decode the generated response
