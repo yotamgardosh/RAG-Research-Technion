@@ -22,26 +22,33 @@ class LLMChat:
         - model_name (str): The Hugging Face model name or path.
         """
         self.model_name = model_name
-        self.model, self.tokenizer = self.load_model_and_tokenizer(model_name)
+        self.model = None
+        self.tokenizer = None
 
-    def load_model_and_tokenizer(self, model_name):
-        """
-        Loads the model and tokenizer from the Hugging Face Hub.
+    # def load_model_and_tokenizer(self, model_name):
+    #     """
+    #     Loads the model and tokenizer from the Hugging Face Hub.
+    #
+    #     Args:
+    #     - model_name (str): The Hugging Face model name or path.
+    #
+    #     Returns:
+    #     - model: The loaded model.
+    #     - tokenizer: The loaded tokenizer.
+    #     """
+    #     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+    #     model = AutoModel.from_pretrained(
+    #         model_name,
+    #         load_in_8bit=True,  # Enable 8-bit quantization for the model
+    #         device_map='auto'  # Automatically use available devices (CPU/GPU)
+    #     )
+    #     return model, tokenizer
+    #
 
-        Args:
-        - model_name (str): The Hugging Face model name or path.
+    def set_model_and_tokenizer(self, model, tokenizer):
+        self.model = model
+        self.tokenizer = tokenizer
 
-        Returns:
-        - model: The loaded model.
-        - tokenizer: The loaded tokenizer.
-        """
-        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
-        model = AutoModel.from_pretrained(
-            model_name,
-            load_in_8bit=True,  # Enable 8-bit quantization for the model
-            device_map='auto'  # Automatically use available devices (CPU/GPU)
-        )
-        return model, tokenizer
 
     def chat(self, messages):
         """
