@@ -15,6 +15,13 @@ class Model:
         self.max_tokens = max_tokens,  # Limit the maximum number of tokens to generate
         self.temperature = temperature,  # Lower temperature for more deterministic output
         self.top_p = top_p
+        print(f"Initialized model '{self.shorter_name}' with the following settings:")
+        print(f"Context length: {self.n_ctx}")
+        print(f"Threads: {self.n_threads}")
+        print(f"GPU layers: {self.n_gpu_layers}")
+        print(f"Max tokens: {self.max_tokens}")
+        print(f"Temperature: {self.temperature}")
+        print(f"Top-p sampling: {self.top_p}")
 
     def __str__(self):
         return f"Model Name: {self.model_name}\nShort Name: {self.shorter_name}\nPath: {self.file_path}"
