@@ -15,7 +15,8 @@ from langchain.llms import LlamaCpp
 from langchain.schema import SystemMessage, HumanMessage
 
 class Model:
-    def __init__(self, model_name, shorter_name, file_path, n_ctx=16000, n_threads=32, n_gpu_layers=0, max_tokens=30, temperature=0.2, top_p=0.6):
+    def __init__(self, model_name, shorter_name, file_path, n_ctx=16000,
+                 n_threads=32, n_gpu_layers=0, max_tokens=30, temperature=0.2, top_p=0.6):
 
         """
         Initialize a new Model instance with configuration for language model processing.
@@ -34,11 +35,11 @@ class Model:
         self.model_name = model_name
         self.shorter_name = shorter_name
         self.file_path = file_path
-        self.n_ctx = n_ctx,
-        self.n_threads = n_threads,
-        self.n_gpu_layers = n_gpu_layers,
-        self.max_tokens = max_tokens,  # Limit the maximum number of tokens to generate
-        self.temperature = temperature,  # Lower temperature for more deterministic output
+        self.n_ctx = n_ctx
+        self.n_threads = n_threads
+        self.n_gpu_layers = n_gpu_layers
+        self.max_tokens = max_tokens  # Limit the maximum number of tokens to generate
+        self.temperature = temperature # Lower temperature for more deterministic output
         self.top_p = top_p
         print("------------------------------------------------------------------------")
         print(f"Initialized model '{self.shorter_name}' with the following settings:")
