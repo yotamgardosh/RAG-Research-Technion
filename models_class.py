@@ -16,11 +16,6 @@ class Model:
             temperature (float): Controls randomness in generation. Lower values lead to more deterministic outputs.
             top_p (float): Top-p sampling probability threshold for nucleus sampling.
         """
-        from langchain import LLMChain, PromptTemplate
-        from huggingface_hub import hf_hub_download
-        from llama_cpp import Llama
-        from langchain.llms import LlamaCpp
-        from langchain.schema import SystemMessage, HumanMessage
         self.model_name = model_name
         self.shorter_name = shorter_name
         self.file_path = file_path
@@ -57,7 +52,6 @@ class Model:
         Returns:
             str: The path to the downloaded model files.
         """
-        from huggingface_hub import hf_hub_download
         return hf_hub_download(self.model_name, filename=self.file_path)
 
     def create_llm(self):
@@ -67,7 +61,6 @@ class Model:
         Returns:
             LlamaCpp: A language model instance configured with specified settings.
         """
-        from llama_cpp import LlamaCpp
         model_path = self.create_model_path()  # Ensure we download the model first
         return LlamaCpp(
             model_path=model_path,
