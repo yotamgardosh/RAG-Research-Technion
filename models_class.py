@@ -16,11 +16,6 @@ class Model:
             temperature (float): Controls randomness in generation. Lower values lead to more deterministic outputs.
             top_p (float): Top-p sampling probability threshold for nucleus sampling.
         """
-        from langchain import LLMChain, PromptTemplate
-        from huggingface_hub import hf_hub_download
-        from llama_cpp import Llama
-        from langchain.llms import LlamaCpp
-        from langchain.schema import SystemMessage, HumanMessage
         self.model_name = model_name
         self.shorter_name = shorter_name
         self.file_path = file_path
@@ -30,6 +25,7 @@ class Model:
         self.max_tokens = max_tokens,  # Limit the maximum number of tokens to generate
         self.temperature = temperature,  # Lower temperature for more deterministic output
         self.top_p = top_p
+        print("------------------------------------------------------------------------")
         print(f"Initialized model '{self.shorter_name}' with the following settings:")
         print(f"Context length: {self.n_ctx}")
         print(f"Threads: {self.n_threads}")
@@ -41,6 +37,9 @@ class Model:
         print("  - create_model_path(): Download model files to a specified path.")
         print("  - create_llm(): Create and configure a language model for use.")
         print("  - __str__(): Return a string representation of the model's settings.")
+        print("------------------------------------------------------------------------")
+        print("\n\n")
+
 
     def __str__(self):
         """
@@ -57,7 +56,6 @@ class Model:
         Returns:
             str: The path to the downloaded model files.
         """
-        from huggingface_hub import hf_hub_download
         return hf_hub_download(self.model_name, filename=self.file_path)
 
     def create_llm(self):
@@ -67,7 +65,6 @@ class Model:
         Returns:
             LlamaCpp: A language model instance configured with specified settings.
         """
-        from llama_cpp import LlamaCpp
         model_path = self.create_model_path()  # Ensure we download the model first
         return LlamaCpp(
             model_path=model_path,
