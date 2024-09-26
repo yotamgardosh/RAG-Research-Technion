@@ -65,14 +65,29 @@ class Model:
             str: A description of the model.
         """
         return f"Model Name: {self.model_name}\nShort Name: {self.shorter_name}\nPath: {self.file_path}"
-    def create_model_path(self):
+    def create_model_path(self, repo_id, file_name, local_dir, new_file_name):
         """
-        Downloads the model files using Hugging Face Hub based on the model's configuration.
-
+        Downloads the model file from Hugging Face Hub and renames it to the provided custom name.
+        
+        Args:
+            repo_id (str): The Hugging Face repository ID.
+            file_name (str): The file name in the repository.
+            local_dir (str): The local directory to download the file to.
+            new_file_name (str): The desired name for the downloaded file.
+        
         Returns:
-            str: The path to the downloaded model files.
+            str: The path to the downloaded and renamed model file.
         """
-        return hf_hub_download(self.model_name, filename=self.file_path)
+        # Download the file from Hugging Face Hub
+        downloaded_file_path = hf_hub_download(repo_id=repo_id, filename=file_name, local_dir=local_dir)
+        
+        # Create the new file path
+        new_file_path = os.path.join(local_dir, new_file_name)
+        
+        # Rename the file to the new file name
+        os.rename(downloaded_file_path, new_file_path)
+        
+        return new_file_path
 
     def create_llm(self):
         """
