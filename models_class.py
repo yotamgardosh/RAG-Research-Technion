@@ -89,14 +89,13 @@ class Model:
         
         return new_file_path
 
-    def create_llm(self):
+    def create_llm(self,model_path):
         """
         Creates and returns a configured language model instance using the provided model path.
 
         Returns:
             LlamaCpp: A language model instance configured with specified settings.
         """
-        model_path = self.create_model_path()  # Ensure we download the model first
         return LlamaCpp(
             model_path=model_path,
             n_ctx=self.n_ctx,
