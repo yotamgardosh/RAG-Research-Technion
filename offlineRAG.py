@@ -398,7 +398,7 @@ def process_queries_and_save_retrievals(
     documents,
     name,
     query_file_path,
-    output_dir="/content/drive/MyDrive/Technion - LLM Research 2024/Coding Environment /Resources/RAG resources/retrieved_documents",
+    output_dir="*******************************************************",
     model_name='all-mpnet-base-v2',
     with_relevancy=False,
     verbose=True
