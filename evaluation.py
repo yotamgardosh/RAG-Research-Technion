@@ -142,30 +142,30 @@ INCLUDE_TASK_PATH = "***********"
 
 """No RAG controll lm_harness rus Ministral 3B:"""
 
-# !lm_eval --model hf \
-#     --model_args pretrained=$Ministral_3B \
-#     --include_path $PARTIAL_TASK \
-#     --tasks $PARTIAL_TASK_PROMPT_ENG \
-#     --output "{ministral_3B_no_RAG}"\
-#     --log_samples
+!lm_eval --model hf \
+    --model_args pretrained=$Ministral_3B \
+    --include_path $PARTIAL_TASK \
+    --tasks $PARTIAL_TASK_PROMPT_ENG \
+    --output "{ministral_3B_no_RAG}"\
+    --log_samples
 
 
 
-# !lm_eval --model hf \
-#     --model_args pretrained=$Llama_3_3B \
-#     --include_path $INCLUDE_TASK_PATH \
-#     --tasks $PARTIAL_TASK_PROMPT_ENG \
-#     --output  "{llama_3_3b_no_RAG_results}"\
-#     --log_samples
+!lm_eval --model hf \
+    --model_args pretrained=$Llama_3_3B \
+    --include_path $INCLUDE_TASK_PATH \
+    --tasks $PARTIAL_TASK_PROMPT_ENG \
+    --output  "{llama_3_3b_no_RAG_results}"\
+    --log_samples
 
 """No RAG controll lm_hrness run Llama_2_7B:"""
 
-# !lm_eval --model hf \
-#     --model_args pretrained=$Llama_2_7B \
-#     --include_path $INCLUDE_TASK_PATH \
-#     --tasks $PARTIAL_TASK_PROMPT_ENG \
-#     --output "{llama_2_7b_no_RAG_results}"\
-#     --log_samples
+!lm_eval --model hf \
+    --model_args pretrained=$Llama_2_7B \
+    --include_path $INCLUDE_TASK_PATH \
+    --tasks $PARTIAL_TASK_PROMPT_ENG \
+    --output "{llama_2_7b_no_RAG_results}"\
+    --log_samples
 
 """---
 
