@@ -5,7 +5,7 @@
 # %cd rag-evaluation-harness
 !conda create -n lm-eval python=3.11
 !pip install -e .
-!mkdir -p /content/rag-evaluation-harness/lm_eval/tasks/sysengbench
+!mkdir -p ************/tasks/sysengbench
 !touch **********************demo_sysengbench.yaml
 
 
