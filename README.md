@@ -20,5 +20,5 @@ This project integrates ** open-source Foundation models LLMs** such as:
 - **Efficient Document Filtering**: Uses **LLM-as-a-Judge** to reduce noise in retrieved context.
 
 ## 📂 Repository Structure
-RAG-Research-Technion/ ├── src/ # Source code (retrieval, model inference, evaluation) ├── data/ # Datasets (raw text, embeddings, etc.) ├── models/ # Pre-trained and fine-tuned models ├── results/ # Evaluation outputs and benchmarking results ├── docs/ # Research reports, references, and technical documents ├── notebooks/ # Jupyter notebooks for testing and analysis ├── tests/ # Unit and integration tests ├── README.md # Project documentation (this file) ├── LICENSE # License information └── .gitignore # Files to be ignored in Git
+
 
