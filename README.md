@@ -1,20 +1,24 @@
+# RAG-Research-Technion
 
-# LLM-Research-Technion
+## 🚀 Overview
 
-Welcome to the LLM-Research-Technion repository! This repository serves as the central hub for our ongoing research and development of Large Language Models (LLMs) at Technion. Our work focuses on exploring, evaluating, and implementing advanced LLM architectures to solve complex problems in systems engineering and beyond.
+**RAG-Research-Technion** is an advanced **Retrieval-Augmented Generation (RAG) system** designed to enhance Large Language Model (LLM) responses by dynamically retrieving relevant context from external knowledge sources. By leveraging **LangChain**, **ChromaDB**, and **vector search**, the system improves **domain-specific question answering and reasoning**.
 
-## Model Implementations:
-Source code and scripts for various LLMs, including Transformer-based models, encoder-decoder hybrids, and instruction-tuned models.
+This project integrates ** open-source Foundation models LLMs** such as:
+- **Mistral 7B**
+- **Orca 2 7B**
+- **Llama 2 13B**
+- **Gemma 2 2B**
 
-## Research Papers:
-A collection of academic papers and technical reports related to our research, including our analyses and evaluations of different LLM architectures.
+## 🔧 Features
 
-## Experiments and Results:
-Documentation and datasets from our experimental work, detailing the performance and behavior of different LLMs in specific tasks.
+- **Contextual RAG Implementation**: Retrieves domain-specific knowledge before generating responses.
+- **Vector Search with ChromaDB**: Uses **semantic search** to fetch **highly relevant documents**.
+- **LangChain Orchestration**: Implements **document retrieval, prompt engineering, and structured LLM execution**.
+- **Multi-Model Benchmarking**: Evaluates different **LLMs with and without RAG** for comparative analysis.
+- **Chain-of-Thought (CoT) Reasoning**: Guides models to **think in structured steps** for better decision-making.
+- **Efficient Document Filtering**: Uses **LLM-as-a-Judge** to reduce noise in retrieved context.
 
-## Tools and Utilities:
-Custom scripts and tools developed to facilitate LLM training, fine-tuning, and evaluation processes.
-
-## Collaborations:
-Contributions from Technion researchers and collaborators, including shared code and joint research efforts.
+## 📂 Repository Structure
+RAG-Research-Technion/ ├── src/ # Source code (retrieval, model inference, evaluation) ├── data/ # Datasets (raw text, embeddings, etc.) ├── models/ # Pre-trained and fine-tuned models ├── results/ # Evaluation outputs and benchmarking results ├── docs/ # Research reports, references, and technical documents ├── notebooks/ # Jupyter notebooks for testing and analysis ├── tests/ # Unit and integration tests ├── README.md # Project documentation (this file) ├── LICENSE # License information └── .gitignore # Files to be ignored in Git
 
