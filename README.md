@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-**RAG-Research-Technion** is an advanced **Retrieval-Augmented Generation (RAG) system** designed to enhance Large Language Model (LLM) responses by dynamically retrieving relevant context from external knowledge sources. By leveraging **LangChain**, **ChromaDB**, and **vector search**, the system improves **domain-specific question answering and reasoning**.
+**RAG-Research-Technion** is an **AI** research project focusing on creating a **Retrieval-Augmented Generation (RAG) system** designed to enhance Large Language Model (LLM) responses by dynamically retrieving relevant context from external knowledge sources. By leveraging **LangChain**, **ChromaDB**, and **vector search**, the system improves **domain-specific question answering and reasoning**.
 
 This project integrates **open-source Foundation models LLMs** such as:
 - **Mistral 7B**
